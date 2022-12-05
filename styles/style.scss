@@ -1,0 +1,219 @@
+@use 'sass:math';
+
+// @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400&family=Roboto:wght@300;400&display=swap');
+
+// @import 'colors.scss';
+@import 'mixins.scss';
+@mixin back($value) {
+  background-color: $value;
+}
+@function toVw($target) {
+  $vw-context: (1920 * 0.01) * 1px;
+  @return math.div($target, $vw-context) * 1vw;
+}
+$c-accent: #d4c17f;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+body,
+html {
+  font-size: toVw(14px);
+  font-family: 'Raleway', sans-serif;
+  color: #fff;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  object-fit: cover;
+  background-color: #242b33;
+}
+.container {
+  width: toVw(1110px);
+  margin: auto;
+}
+
+.logo {
+  h2 {
+    font-weight: 600;
+    font-size: toVw(36px);
+    margin-bottom: toVw(15px);
+  }
+  p {
+    font-weight: 400;
+    font-size: toVw(12px);
+    line-height: toVw(12px);
+    letter-spacing: t12px;
+  }
+}
+
+.first-screen {
+  max-height: toVw(840px);
+  padding-top: toVw(30px);
+  padding-bottom: toVw(74px);
+
+  background-image: url('../img/bg-image.jpg');
+  @include bg-default();
+
+  &-header {
+    @include flex-between();
+    @include flex-center();
+
+    &__menu {
+      display: flex;
+      gap: toVw(40px);
+      &__item {
+        a {
+          font-weight: 400;
+          font-size: toVw(14px);
+        }
+      }
+    }
+  }
+  .first-screen-info {
+    &-wrapper {
+      max-width: toVw(582px);
+      margin: auto;
+    }
+    &-top {
+      text-align: center;
+      color: $c-accent;
+      margin-top: toVw(200px);
+      margin-bottom: toVw(200px);
+      &__title {
+        font-family: 'Playfair Display', sans-serif;
+        font-weight: 700;
+        font-size: toVw(48px);
+        line-height: toVw(64px);
+        margin-bottom: toVw(100px);
+      }
+      &__mouse {
+        img {
+          width: toVw(40px);
+          height: toVw(40px);
+        }
+      }
+    }
+    &-contacts {
+      @include flex-between();
+      font-weight: 400;
+      font-size: toVw(18px);
+      &__adres {
+        position: relative;
+        &::after {
+          @include after();
+          @include bg-default();
+          background-image: url('../img/map.svg');
+          top: 0;
+          left: toVw(-28px);
+          width: toVw(21px);
+          height: toVw(21px);
+          cursor: pointer;
+        }
+      }
+      &__phone {
+        position: relative;
+        &::after {
+          @include after;
+          @include bg-default();
+          background-image: url('../img/phone-call.svg');
+          top: 0;
+          left: toVw(-28px);
+          width: toVw(21px);
+          height: toVw(21px);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.testimonials {
+  margin: toVw(120px) 0;
+  @include bg-default();
+
+  &-items {
+    @include flex-between();
+    max-width: toVw(794px);
+    margin: auto;
+    position: relative;
+
+    &::after {
+      @include after();
+      @include bg-default();
+      background-image: url('../img/II.svg');
+      top: 50%;
+      right: -50%;
+      transform: translateY(-50%);
+      width: toVw(273px);
+      height: toVw(283px);
+    }
+  }
+  &-item {
+    text-align: center;
+    &__image {
+      width: toVw(80px);
+      height: toVw(80px);
+      margin-bottom: toVw(53px);
+    }
+    &__text {
+    }
+  }
+}
+
+.appartments {
+  &-title {
+    font-family: 'Playfair Display';
+    font-weight: 700;
+    font-size: toVw(36px);
+    color: #d4c17f;
+    margin-bottom: toVw(100px);
+  }
+  &-items {
+    display: flex;
+    flex-direction: column;
+    &__top {
+      display: flex;
+    }
+    &__bottom {
+      display: flex;
+    }
+    &__item {
+      position: relative;
+      padding: 15px;
+      &::after {
+        content: 'Лофт — 3 этажа';
+        display: block;
+        position: absolute;
+
+        left: toVw(50px);
+        bottom: toVw(50px);
+        font-weight: 400;
+        font-size: 24px;
+      }
+      &__image {
+        width: toVw(535px);
+        height: toVw(320px);
+      }
+    }
+  }
+}

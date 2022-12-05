@@ -1,0 +1,210 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400&family=Roboto:wght@300;400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+body,
+html {
+  font-size: 0.7291666667vw;
+  font-family: "Raleway", sans-serif;
+  color: #fff;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-color: #242b33;
+}
+
+.container {
+  width: 57.8125vw;
+  margin: auto;
+}
+
+.logo h2 {
+  font-weight: 600;
+  font-size: 1.875vw;
+  margin-bottom: 0.78125vw;
+}
+.logo p {
+  font-weight: 400;
+  font-size: 0.625vw;
+  line-height: 0.625vw;
+  letter-spacing: t12px;
+}
+
+.first-screen {
+  max-height: 43.75vw;
+  padding-top: 1.5625vw;
+  padding-bottom: 3.8541666667vw;
+  background-image: url("../img/bg-image.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.first-screen-header {
+  display: flex;
+  justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.first-screen-header__menu {
+  display: flex;
+  gap: 2.0833333333vw;
+}
+.first-screen-header__menu__item a {
+  font-weight: 400;
+  font-size: 0.7291666667vw;
+}
+.first-screen .first-screen-info-wrapper {
+  max-width: 30.3125vw;
+  margin: auto;
+}
+.first-screen .first-screen-info-top {
+  text-align: center;
+  color: #d4c17f;
+  margin-top: 10.4166666667vw;
+  margin-bottom: 10.4166666667vw;
+}
+.first-screen .first-screen-info-top__title {
+  font-family: "Playfair Display", sans-serif;
+  font-weight: 700;
+  font-size: 2.5vw;
+  line-height: 3.3333333333vw;
+  margin-bottom: 5.2083333333vw;
+}
+.first-screen .first-screen-info-top__mouse img {
+  width: 2.0833333333vw;
+  height: 2.0833333333vw;
+}
+.first-screen .first-screen-info-contacts {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 400;
+  font-size: 0.9375vw;
+}
+.first-screen .first-screen-info-contacts__adres {
+  position: relative;
+}
+.first-screen .first-screen-info-contacts__adres::after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../img/map.svg");
+  top: 0;
+  left: -1.4583333333vw;
+  width: 1.09375vw;
+  height: 1.09375vw;
+  cursor: pointer;
+}
+.first-screen .first-screen-info-contacts__phone {
+  position: relative;
+}
+.first-screen .first-screen-info-contacts__phone::after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../img/phone-call.svg");
+  top: 0;
+  left: -1.4583333333vw;
+  width: 1.09375vw;
+  height: 1.09375vw;
+  cursor: pointer;
+}
+
+.testimonials {
+  margin: 6.25vw 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.testimonials-items {
+  display: flex;
+  justify-content: space-between;
+  max-width: 41.3541666667vw;
+  margin: auto;
+  position: relative;
+}
+.testimonials-items::after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../img/II.svg");
+  top: 50%;
+  right: -50%;
+  transform: translateY(-50%);
+  width: 14.21875vw;
+  height: 14.7395833333vw;
+}
+.testimonials-item {
+  text-align: center;
+}
+.testimonials-item__image {
+  width: 4.1666666667vw;
+  height: 4.1666666667vw;
+  margin-bottom: 2.7604166667vw;
+}
+.appartments-title {
+  font-family: "Playfair Display";
+  font-weight: 700;
+  font-size: 1.875vw;
+  color: #d4c17f;
+  margin-bottom: 5.2083333333vw;
+}
+.appartments-items {
+  display: flex;
+  flex-direction: column;
+}
+.appartments-items__top {
+  display: flex;
+}
+.appartments-items__bottom {
+  display: flex;
+}
+.appartments-items__item {
+  position: relative;
+  padding: 15px;
+}
+.appartments-items__item::after {
+  content: "Лофт — 3 этажа";
+  display: block;
+  position: absolute;
+  left: 2.6041666667vw;
+  bottom: 2.6041666667vw;
+  font-weight: 400;
+  font-size: 24px;
+}
+.appartments-items__item__image {
+  width: 27.8645833333vw;
+  height: 16.6666666667vw;
+}
